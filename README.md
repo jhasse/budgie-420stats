@@ -1,5 +1,6 @@
 #Budgie 420 Stats
 I know there exists some applets do display stats like CPU, but they all didnt work for me. 
+
 You can only display CPU and RAM at the time, but i will expand the functionality soon.
 
 ##Installation
