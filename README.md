@@ -1,8 +1,7 @@
 #Budgie 420 Stats
-I know there exists some applets do display stats like CPU, but they all didnt work for me. 
-
-You can only display CPU and RAM at the time, but i will expand the functionality soon.
-
+This applet was made for Solus, all other applets i tried didnt work.
+You can only display CPU and RAM usage now, but i will make it a full system monitor soon.
+Because i have no time for graphical settings, you can use 'settings.py'.
 ##Installation
 I use Solus 1.2.0.5, so i dont know how to install it on other systems. [Here](https://docs.google.com/spreadsheets/d/1DphSjZA4lK0tGNCOp9AWNwHPayvu31VXABXTrI9Ic08/edit#gid=0) is a list of other applets, maybe it can help you.
 
