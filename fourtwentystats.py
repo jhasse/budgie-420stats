@@ -34,7 +34,10 @@ class myThread (threading.Thread):
             self.cpu = str(psutil.cpu_percent(interval=0.0)) #cpu usage but not what i want
             stri = self.data["cpu_text"]+ self.cpu+self.data["ram_text"] +self.memp+"%" #label string
             self.label.set_text(stri) 
-            time.sleep(5) #intervall
+            h = time.localtime(time.time()).tm_hour
+            if((h<4 and h>3)or(h<16 and h>15)):
+                self.label.set_tooltip_text("420 is near!")#will improve this today
+            time.sleep(data["update_interval"]) #intervall
 
 class fourtwentystatsApplet(Budgie.Applet):
     def __init__(self, uuid):
