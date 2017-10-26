@@ -9,7 +9,7 @@ gi.require_version('Budgie', '1.0')
 gi.require_version('Wnck', '3.0')
 from _thread import start_new_thread
 from gi.repository import Budgie, GObject, Wnck, Gtk
-import threading 
+import threading
 class fourtwentystats(GObject.GObject, Budgie.Plugin):
     __gtype_name__ = "fourtwentystats"
 
@@ -23,21 +23,21 @@ class myThread (threading.Thread):
         threading.Thread.__init__(self)
         self.label = label
         self.counter = 2
-        self.data = json.load(open("data.json"))
-    def run(self): 
-		
-        while self.counter>1: 
-		
+        self.data = json.load(open("settings.json"))
+    def run(self):
+
+        while self.counter>1:
+
             self.counter = self.counter +1
             self.mem = psutil.virtual_memory() #get virtual memory
             self.memp  = str(self.mem.percent)[:2] #first 2 numbers of percental memory usage
             self.cpu = str(psutil.cpu_percent(interval=0.0)) #cpu usage but not what i want
-            stri = self.data["cpu_text"]+ self.cpu+self.data["ram_text"] +self.memp+"%" #label string
-            self.label.set_text(stri) 
+            stri = self.data["cpu_text"]+ self.cpu+"% "+self.data["ram_text"] +self.memp+"%" #label string
+            self.label.set_text(stri)
             h = time.localtime(time.time()).tm_hour
             if((h<4 and h>3)or(h<16 and h>15)):
                 self.label.set_tooltip_text("420 is near!")#will improve this today
-            time.sleep(data["update_interval"]) #intervall
+            time.sleep(self.data["update_interval"]) #intervall
 
 class fourtwentystatsApplet(Budgie.Applet):
     def __init__(self, uuid):

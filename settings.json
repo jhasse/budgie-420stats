@@ -1,5 +1,5 @@
 {
 	"cpu_text" : "CPU: ",
-	"ram_text" : "RAM: "
-	"update_interval" : 5,
+	"ram_text" : "RAM: ",
+	"update_interval" : 5
 }
